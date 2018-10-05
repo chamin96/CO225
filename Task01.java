@@ -18,5 +18,6 @@ public class Task01{
         num = keyboard.nextInt();
         System.out.println(num+" is special, weird and scary but not big.");
 
+        keyboard.close();
     }
 }
