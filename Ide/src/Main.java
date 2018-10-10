@@ -27,22 +27,40 @@ public class Main {
         boolean isScary = isBig||isWeird;
 
         /*OUTPUT*/
+        System.out.print(num+" is");
         if (isSpecial){
-            System.out.print(num+" is special");
+            System.out.print(" special,");
             if (isScary){
-                if (!isBig){
-                    System.out.print(", weird and scary but not big.");
+                if (isBig && isWeird){
+                    System.out.println(" big, weird, scary.");
+                }
+                else if (isBig){
+                    System.out.println(" big, scary, but not weird.");
                 }
                 else {
-                    System.out.print(", weird, scary and big.");
+                    System.out.println(" weird, scary, but not big.");
                 }
             }
             else {
-                System.out.print(" but not scary.");
+                System.out.println(" but not scary.");
             }
+
         }
-        else {
-            System.out.println(num+" is not special.");
+        else{
+            if (isScary){
+                if (isBig && isWeird){
+                    System.out.println(" big, weird, scary.");
+                }
+                else if (isBig){
+                    System.out.println(" big, scary, but not weird.");
+                }
+                else {
+                    System.out.println(" weird, scary, but not big.");
+                }
+            }
+            else {
+                System.out.println(" not scary.");
+            }
         }
 
 
