@@ -1,6 +1,6 @@
 import java.util.Scanner;  //import Scanner
 
-public class Task02{
+public class helloWorld{
     public static void main(String[] args) {
 
         //create a new scanner
@@ -13,7 +13,7 @@ public class Task02{
 
 
         int cmp_r,cmp_g,cmp_b;
-        if (r>111&&r<144||g>111&&g<144||b>111&&b<144){
+        if (r>111&&r<144&&g>111&&g<144&&b>111&&b<144){
             cmp_r=(r<128)?r+128:r-128;
             cmp_g=(g<128)?g+128:g-128;
             cmp_b=(b<128)?b+128:b-128;
