@@ -2,30 +2,18 @@ public class Matrix extends Thread {
 
     private static int [][] a; 
     private static int [][] b; 
-    private static int [][] c;
-
-    private static int rowA;
-	private static int colB;
-
-	private static int colA;
-	private static int rowB;
-
-	private static int s;
-	private static int i;
-	private static int j;
-	private static int k;
-
+    private static int [][] c; 
 
     /* You might need other variables as well */
 
-
-    public Matrix() { // need to change this, might need some information
-    	start();
-    }
-
-    public void run(){
-		s += a[i][k] * b[k][j];
-    }
+	public Matrix() { // need to change this, might need some information
+		System.out.println("Constructor");
+		start();
+	}
+	
+	public void run(){
+		System.out.println("Thread created "+ this);
+	}
 
     public static int [][] multiply(int [][] a, int [][] b) {
 
@@ -35,32 +23,28 @@ public class Matrix extends Thread {
 	 * return a * b
 	 */
 
-    rowA = a.length; 
-	colB = b[0].length; 
+	new Matrix();
+	
+	int x = a.length; 
+	int y = b[0].length; 
 
-	colA = a[0].length; 
-	rowB = b.length;
+	int z1 = a[0].length; 
+	int z2 = b.length; 
 
-
-	if(colA != rowB) { 
+	if(z1 != z2) { 
 	    System.out.println("Cannnot multiply");
 	    return null;
 	}
 
-	c = new int [rowA][colB];
+	int [][] c = new int [x][y]; 
+	int i, j, k, s; 
 
-		for(i=0; i<rowA; i++){
-		    for(j=0; j<colB; j++) {
-				for(s=0, k=0; k<colA; k++){
-					t.start();
-				    
-				}
-			c[i][j] = s;
-		    }
-	
-		}	
-	
-
+	for(i=0; i<x; i++) 
+	    for(j=0; j<y; j++) {
+		for(s=0, k=0; k<z1; k++) 
+		    s += a[i][k] * b[k][j];
+		c[i][j] = s;
+	    }
 
 	return c; 
     }

@@ -24,7 +24,7 @@ class Main {
 			print_matrix(x); // see if the multipication is correct
     	}
     	catch(NullPointerException e){
-    		System.out.println("Error");
+    		System.out.println(e);
     	}
 
 	 	
