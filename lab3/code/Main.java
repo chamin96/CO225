@@ -3,9 +3,9 @@ class Main {
 				{1, 1, 1},
 				{1, 1, 1}};
     
-    public static int [][] b = {{1 },
-				{1 },
-				{1 }};
+    public static int [][] b = {{1, 1},
+				{1, 1},
+				{1, 1}};
 
 
     public static void print_matrix(int [][] a) {
