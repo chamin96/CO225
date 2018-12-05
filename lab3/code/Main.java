@@ -17,10 +17,17 @@ class Main {
     }
     
 
-    public static void main(String [] args) { 
+    public static void main(String [] args) {
 
-	int [][] x = Matrix.multiply(a, b); 
-	print_matrix(x); // see if the multipication is correct 	
+    	try{
+    		int [][] x = Matrix.multiply(a, b); 
+			print_matrix(x); // see if the multipication is correct
+    	}
+    	catch(NullPointerException e){
+    		System.out.println("Error");
+    	}
+
+	 	
 
     }
 }
