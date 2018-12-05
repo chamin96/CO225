@@ -5,7 +5,7 @@
 
 public class MatrixOps extends Thread {
 
-        private static int [][] a; // two source c = a+b
+    private static int [][] a; // two source c = a+b
     private static int [][] b; 
     private static int [][] c; // result 
 
