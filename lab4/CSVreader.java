@@ -59,22 +59,33 @@ public class CSVreader{
 			}
 		}
 
-		// Iterator<Map<Integer,Contacts>> iter = contactList.iterator();
-		// //Iterator<Map.Entry<Integer,String>> it = contactList.entrySet().iterator();
+		//create a new scanner
+		String searchKey;
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Search contacts: ");
+        searchKey = keyboard.nextLine();
+        System.out.println(searchKey);
+		keyboard.close();
 
-		// //Set<Integer> keys = contactList.keySet();
-		// //Iterator<Integer> it = keys.iterator();
-
-		// while(iter.hasNext()){
-		// 	System.out.println(iter.next());
-		// }
-
-		//Traversing map  
+		//search
+		String first_name,last_name,phone_no,e_addr;
 		for(Map.Entry<Integer, Contacts> entry:contactList.entrySet()){    
-			int key=entry.getKey();  
+			//int key=entry.getKey();  
 			Contacts c=entry.getValue();  
-			System.out.println(key+" Details:");  
-			System.out.println(c.fName+" "+c.lName+" "+c.phone+" "+c.email);   
+			//System.out.print(key+" Details: ");
+
+			first_name= c.fName;
+			last_name = c.lName;
+			phone_no  = c.phone;
+			e_addr	  = c.email;
+
+			if (last_name.equals(searchKey)){
+				System.out.println(c.fName+" "+c.phone+" "+c.email);
+			}
+			else{
+				continue;
+			}
+			//System.out.println(c.fName+" "+c.lName+" "+c.phone+" "+c.email);   
 		} 
 		
 
