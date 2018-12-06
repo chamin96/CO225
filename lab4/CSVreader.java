@@ -25,7 +25,7 @@ public class CSVreader{
 			br = new BufferedReader(new FileReader(file));
 		}
 		catch(FileNotFoundException e){
-			e.printStackTrace();
+			System.out.println(e);
 		}
 
 		//read CSV file
@@ -42,11 +42,8 @@ public class CSVreader{
 				index++;
 			}
 		}
-		catch(FileNotFoundException e){
-			e.printStackTrace();
-		}
 		catch(IOException e){
-			e.printStackTrace();
+			System.out.println(e);
 		}
 		finally{
 			if(br != null){
@@ -54,7 +51,7 @@ public class CSVreader{
 					br.close();
 				}
 				catch(IOException e){
-					e.printStackTrace();
+					System.out.println(e);
 				}
 			}
 		}
