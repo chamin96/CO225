@@ -64,30 +64,45 @@ public class CSVreader{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("Search contacts: ");
         searchKey = keyboard.nextLine();
-        System.out.println(searchKey);
+        System.out.println("----------------------");
 		keyboard.close();
 
-		//search
-		String first_name,last_name,phone_no,e_addr;
-		for(Map.Entry<Integer, Contacts> entry:contactList.entrySet()){    
-			//int key=entry.getKey();  
-			Contacts c=entry.getValue();  
-			//System.out.print(key+" Details: ");
-
-			first_name= c.fName;
-			last_name = c.lName;
-			phone_no  = c.phone;
-			e_addr	  = c.email;
-
-			if (last_name.equals(searchKey)){
-				System.out.println(c.fName+" "+c.phone+" "+c.email);
-			}
-			else{
-				continue;
-			}
-			//System.out.println(c.fName+" "+c.lName+" "+c.phone+" "+c.email);   
-		} 
+		String[] searchSplit = searchKey.split(":");	//split input string
+		String q1=searchSplit[0];	//F or L
+		String q2=searchSplit[1];	//name
 		
+		switch (q1) {
+			case "F":
+				for(Map.Entry<Integer, Contacts> entry:contactList.entrySet()){    
+
+					Contacts c=entry.getValue();
+
+					if (c.fName.equals(q2)){
+						System.out.println("Name: "+c.fName+" "+c.lName+"\nPhone: "+c.phone+"\nEmail: "+c.email);
+						System.out.println("----------------------");
+					}
+					else{
+						continue;
+					}
+				}
+				break;
+			case "L":
+				for(Map.Entry<Integer, Contacts> entry:contactList.entrySet()){    
+				
+					Contacts c=entry.getValue();  
+
+					if (c.lName.equals(q2)){
+						System.out.println("Name: "+c.fName+" "+c.lName+"\nPhone: "+c.phone+"\nEmail: "+c.email);
+						System.out.println("----------------------");
+					}
+					else{
+						continue;
+					}
+				}
+				break;
+			default:
+				break;
+		}
 
 		
 	}
