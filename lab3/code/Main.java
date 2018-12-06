@@ -1,5 +1,5 @@
 class Main {
-	public static int size=500;
+	public static int size=5;
 	public static int [][] a = new int[size][size];
 
     
@@ -11,7 +11,7 @@ class Main {
 	public static void matrixGen(){
 		for(int i=0;i<size;i++){
 			for(int j=0;j<size;j++){
-				a[i][j]=(int)(Math.random()*1000);
+				a[i][j]=(int)(Math.random()*10);
 			}
 		}
 	}
@@ -26,8 +26,10 @@ class Main {
     
 
     public static void main(String [] args) {
+		
 
 		matrixGen();
+		print_matrix(a);
     	try{
     		int [][] x = Matrix.multiply(a, a); 
 			print_matrix(x); // see if the multipication is correct

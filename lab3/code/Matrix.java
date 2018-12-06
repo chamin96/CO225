@@ -7,9 +7,11 @@ public class Matrix extends Thread {
 	/* You might need other variables as well */
 	public static int x,y,z1,z2;
 	public static int i,j,k,s;
+	public static int count=0;
 
 	public Matrix() { // need to change this, might need some information
 		start();
+		count++;
 		try{
 			join();
 		}
@@ -52,12 +54,10 @@ public class Matrix extends Thread {
 	for(i=0; i<x; i++){
 	    for(j=0; j<y; j++){
 			new Matrix();
-			
-
 			c[i][j] = s;
 		}
 	}
-
+	System.out.println(count);
 	return c; 
     }
 
