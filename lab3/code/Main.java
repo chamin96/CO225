@@ -1,5 +1,5 @@
 class Main {
-	public static int size=5;
+	public static int size=1000;
 	public static int [][] a = new int[size][size];
 
     
@@ -29,7 +29,7 @@ class Main {
 		
 
 		matrixGen();
-		print_matrix(a);
+		//print_matrix(a);
     	try{
     		int [][] x = Matrix.multiply(a, a); 
 			print_matrix(x); // see if the multipication is correct
