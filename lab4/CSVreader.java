@@ -64,10 +64,17 @@ public class CSVreader{
         System.out.println("----------------------");
 		keyboard.close();
 
+		//check for input format
+		if (!(searchKey.charAt(0)=='F'||searchKey.charAt(0)=='L'&&searchKey.charAt(1)==':')){
+			System.out.println("Input Error");
+			return;
+		}
+
 		String[] searchSplit = searchKey.split(":");	//split input string
 		String q1=searchSplit[0];	//F or L
 		String q2=searchSplit[1];	//name
-		
+		boolean isMatch=false;
+
 		switch (q1) {
 			case "F":
 				for(Map.Entry<Integer, Contacts> entry:contactList.entrySet()){    
@@ -75,6 +82,7 @@ public class CSVreader{
 					Contacts c=entry.getValue();
 
 					if (c.fName.equals(q2)){
+						isMatch=true;
 						System.out.println("Name: "+c.fName+" "+c.lName+"\nPhone: "+c.phone+"\nEmail: "+c.email);
 						System.out.println("----------------------");
 					}
@@ -89,6 +97,7 @@ public class CSVreader{
 					Contacts c=entry.getValue();  
 
 					if (c.lName.equals(q2)){
+						isMatch=true;
 						System.out.println("Name: "+c.fName+" "+c.lName+"\nPhone: "+c.phone+"\nEmail: "+c.email);
 						System.out.println("----------------------");
 					}
@@ -100,7 +109,10 @@ public class CSVreader{
 			default:
 				break;
 		}
-
+		
+		if(!isMatch){
+			System.err.println("No matching contacts");
+		}
 		
 	}
 }
